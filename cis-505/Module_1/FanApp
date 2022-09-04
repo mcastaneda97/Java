@@ -1,0 +1,69 @@
+public class Fan {
+    public static final int STOPPED = 0;
+    public static final int SLOW = 1;
+    public static final int MEDIUM = 2;
+    public static final int FAST = 3;
+
+    private int Speed;
+    private boolean ON;
+    private double Radius;
+    private String Color;
+
+    public Fan() {
+        Speed = 0;
+        Radius = 6;
+        Color = "white";
+    }
+    public int getSpeed() {
+        return Speed;
+    }
+    public void setSpeed(int speed) {
+        Speed = speed;
+    }
+    public boolean isOn() {
+        return On;
+    }
+    public void setOn(boolean on) {
+        On = on;
+    }
+    public double getRadius() {
+        return Radius;
+    }
+    public void setRadius(double radius) {
+        Radius = radius;
+    }
+    public String getColor() {
+        return Color;
+    }
+    public void setColor(String color) {
+        Color = color;
+    }
+    public String toString() {
+        if (isOn()) {
+            return "Speed: " + getSpeed() + " Color: " + getColor() + " Radius: " + getRadius();
+        } else {
+            return "Color: " + getColor() + " Radius: " + getRadius() + ". The fan is OFF.";
+        }
+    }
+
+}
+public class Main2 {
+
+    public static void main(String[] args) {
+
+        Fan fan1 = new Fan();
+        fan1.setSpeed(Fan.FAST);
+        fan1.setOn(true);
+        fan1.setRadius(10);
+        fan1.setColor("white");
+
+        Fan fan2 = new Fan();
+        fan2.setSpeed(Fan.MEDIUM);
+        fan2.setRadius(6);
+        fan2.setColor("white");
+        fan2.setOn(false);
+
+        System.out.println("Fan #1: "+fan1.toString());
+        System.out.println("Fan #2: "+fan2.toString());
+    }
+}
